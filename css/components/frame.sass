@@ -1,0 +1,106 @@
+// TODO: Frame and Nav height should always be the same. Avoid lots of bugs
+.flakes-frame
+	$NAV_AND_VIEW_WIDTH: $VIEW_WIDTH + $NAVIGATION_WIDTH
+
+	.flakes-navigation
+		float: left
+		border-right: 1px solid darken($gray_lighter, 2%)
+		width: $NAVIGATION_WIDTH
+		min-height: 100vh
+		padding: 50px 0 30px
+		+size(14)
+
+		// +breakpoints($NAV_AND_VIEW_WIDTH)
+		// 	position: fixed
+		// 	overflow-y: scroll
+
+		+breakpoints(0, $NAV_AND_VIEW_WIDTH)
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+
+		.logo
+			display: block
+			margin: 0 0 25px 30px
+
+		.foot
+			margin-left: 30px
+
+		> ul
+			padding: 0
+			margin: 0 0 20px 0
+
+			a
+				color: $gray
+				text-decoration: none
+				&:hover
+					text-decoration: underline
+
+			> li
+				border-bottom: 1px solid darken($gray_lighter, 2%)
+				font-weight: bold
+				line-height: 30px
+				text-indent: 30px
+				padding-right: 30px
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+
+				&.title
+					color: $gray_light
+					font-weight: normal
+
+				&.expanded
+					background: #F9F9F9
+					> ul
+						display: block
+
+				&.active
+					background: $navigation_active_bg
+					font-style: italic
+
+				> ul
+					padding: 0
+					margin: 0
+					display: none
+
+					> li
+						background: #F9F9F9
+						border-top: 1px dashed darken($gray_lighter, 2%)
+
+	.flakes-content
+		float: left
+		width: 100%
+		min-height: 100vh
+		background-color: white
+		+breakpoints($NAV_AND_VIEW_WIDTH)
+			width: $VIEW_WIDTH
+			// margin-left: $NAVIGATION_WIDTH
+
+		.flakes-mobile-top-bar
+			border-bottom: 1px solid $gray_lighter
+			overflow: hidden
+			display: block
+			+breakpoints($NAV_AND_VIEW_WIDTH)
+				display: none
+			a
+				display: block
+				line-height: 0
+
+			.logo-wrap
+				float: right
+				margin: 15px 20px
+				img
+					height: 40px
+
+			.navigation-expand-target
+				margin: 25px 20px
+				float: left
+
+		.view-wrap
+			+clear
+			padding: 20px
+			+breakpoints($NAV_AND_VIEW_WIDTH)
+				padding: 30px 40px

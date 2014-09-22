@@ -1,0 +1,30 @@
+
+=message_styles($color)
+	color: darken($color, 5%)
+	border: 1px solid $color
+	padding: 8px 15px
+	margin: 10px 0
+	position: relative
+	+clear
+	&:after
+		content: ""
+		display: block
+		background: #ECECEC
+		position: absolute
+		bottom: -3px
+		left: 0.3%
+		width: 99.4%
+		height: 2px
+
+.flakes-message
+	+message_styles(#666)
+	&.information
+		+message_styles($blue)
+	&.error
+		+message_styles($magenta)
+	&.warning
+		+message_styles(#FFAAAA)
+	&.tip
+		+message_styles(#60B6E5)
+	&.success
+		+message_styles(#00AA44)

@@ -1,0 +1,81 @@
+
+// Copyright (c) 2013 Thibaut Courouble
+// http://www.cssflow.com
+// Licensed under the MIT License:
+// http://www.opensource.org/licenses/mit-license.php
+
+=button($button-color: gray, $height: 36px, $padding-sides: 20px, $disabled: false)
+	position: relative
+	display: inline-block
+	vertical-align: top
+	height: $height
+	line-height: $height - 1px
+	padding: 0 $padding-sides
+	color: white
+	text-align: center
+	text-decoration: none
+	background-clip: padding-box
+	border: 1px solid
+	border-radius: 2px
+	cursor: pointer
+	+box-shadow(inset 0 1px rgba(white, 0.1), inset 0 0 0 1px rgba(white, 0.08), 0 1px 2px rgba(black, 0.25))
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		pointer-events: none
+		+radial-gradient(center top, farthest-corner, rgba(white, 0.08), rgba(white, 0))
+	@if $disabled == false
+		&:hover:before
+			+radial-gradient(farthest-corner, rgba(white, 0.18), rgba(white, 0.03))
+		&:active
+			+box-shadow(inset 0 1px 2px rgba(black, 0.2))
+		&:active:before
+			content: none
+	$colors: green #5ca934, red #d5452f, blue #1097e6, orange #f4902a, pink #e8367f, gray #47494f, lightgray #ddd, darkblue #3b5ca0, purple #9966cb, magenta #b83d6a
+	@each $pair in $colors
+		@if nth($pair, 1) == $button-color
+			$color: nth($pair, 2)
+			background: $color
+			text-shadow: 0 -1px darken($color, 10%)
+			border-color: darken($color, 10%) darken($color, 10%) darken($color, 15%)
+			+linear-gradient(top, lighten($color, 6%), $color 66%, darken($color, 4%))
+			@if $disabled == false
+				&:active
+					background: $color
+					border-color: darken($color, 15%) darken($color, 10%) darken($color, 10%)
+
+.buttons
+	pre
+		margin: 0
+	a
+		margin-bottom: 4px
+	.button-1
+		+button(green, 50px, 40px)
+	.button-2
+		+button(lightgray, 50px, 40px, true)
+	.button-3
+		+button
+	.button-4
+		+button(red)
+	.button-5
+		+button(blue)
+	.button-6
+		+button(orange)
+	.button-7
+		+button(pink)
+	.button-8
+		+button(darkblue)
+	.button-9
+		+button(purple)
+	.button-10
+		+button(magenta)
+	.button-11
+		+button(gray)
+	.button-12
+		+button(lightgray)
+	.button-13
+		+button(green)

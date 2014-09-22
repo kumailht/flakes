@@ -1,0 +1,46 @@
+
+// ASCII DECORATION
+
+// Normalize require for flakes to build on
+@import "config/general"
+@import "config/colors"
+@import "utils/general"
+
+// Basic global styles required for Flakes to function
+@import "lib/normalize"
+
+
+// TODO: move to flakes internals
+*, *:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+html
+	+size(16)
+	line-height: 1.25
+	color: $body_text_color
+	text-rendering: optimizeLegibility
+	font-family: $SANS_TYPE
+
+a
+	text-decoration: none
+	color: $link_color
+	&:hover
+		text-decoration: underline
+		color: darken($link_color, 10%)
+
+h1, h2, h3, h4, h5, h6
+	margin-bottom: 5px
+	& + p, & + code, & + pre, & + ul, & + ol, & + table
+		margin-top: 0
+
+// name spaced component framework
+@import "components/grid"
+@import "components/forms"
+@import "components/frame"
+@import "components/assorted"
+@import "components/messaging"
+@import "components/buttons"
+@import "components/search-and-filters"
+@import "components/tables"

@@ -1,0 +1,85 @@
+
+.flakes-breadcrumbs
+	+size(11)
+	margin: 0
+	letter-spacing: 1px
+	a
+		text-transform: uppercase
+
+.flakes-key-metrics
+	border: 1px solid $gray_lighter
+	border-bottom: 2px solid darken($gray_lighter, 10%)
+	margin: 20px 0
+	border-radius: 2px
+	overflow: hidden
+
+	> div
+		width: (100 / 6) * 1%
+		border-left: 1px solid $gray_lighter
+		text-align: center
+		padding: 20px 0
+		color: $gray_light
+		float: left
+		+size(14)
+
+		&:first-child
+			border-left: none
+		&:hover
+			background-color: lighten($gray_lighter, 5%)
+			cursor: help
+		span
+			font-weight: 300
+			+size(20)
+			color: $gray_dark
+
+	&.gt700
+		> div
+			width: (100 / 6) * 1%
+
+	&.lt700
+		> div
+			width: (100 / 3) * 1%
+
+.flakes-information-box
+	border-radius: 4px
+	padding: 0 30px 20px 30px
+	dl
+		dt
+			text-transform: uppercase
+			letter-spacing: 1px
+			+size(11)
+			color: $gray_light
+		dd
+			margin: 0
+			color: $gray
+			+size(17)
+
+.flakes-activity-log
+	border: 1px solid $gray_lighter
+	border-bottom: 2px solid darken($gray_lighter, 10%)
+	border-radius: 2px
+	padding: 0
+	> li
+		list-style: none
+		border-bottom: 1px solid $gray_lighter
+		padding: 10px
+		span
+			color: $gray_light
+			margin-left: 5px
+		&:last-child
+			border-bottom: none
+		&:hover
+			background-color: lighten($gray_lighter, 5%)
+
+
+.pagination
+	// +size(18)
+	font-weight: bold
+	margin: 20px 0
+	// float: right
+	a
+		color: $navy
+	input
+		width: 30px
+		text-align: center
+		display: inline-block

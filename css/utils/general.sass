@@ -1,0 +1,108 @@
+
+=linear-gradient($gradientLine, $colorStops...)
+	background-image: -webkit-linear-gradient($gradientLine, $colorStops)
+	background-image: -moz-linear-gradient($gradientLine, $colorStops)
+	background-image: -o-linear-gradient($gradientLine, $colorStops)
+	@if length($gradientLine) == 2
+		background-image: linear-gradient(to #{inverse-side(nth($gradientLine, 1))} #{inverse-side(nth($gradientLine, 2))}, $colorStops)
+	@else
+		background-image: linear-gradient(to #{inverse-side($gradientLine)}, $colorStops)
+
+=radial-gradient($gradient...)
+	background-image: -webkit-radial-gradient($gradient)
+	background-image: -moz-radial-gradient($gradient)
+	background-image: -o-radial-gradient($gradient)
+	background-image: radial-gradient($gradient)
+
+=box-shadow($shadows...)
+	-webkit-box-shadow: $shadows
+	box-shadow: $shadows
+
+=size($size_in_pixels)
+	font-size: ($size_in_pixels * 1px)
+	font-size: (($size_in_pixels / 16) * 1rem)
+
+=image($property, $name, $directory: false)
+	@if $directory == false
+		#{$property}: url($IMG_PATH + $name)
+	@else
+		#{$property}: url($IMG_PATH + $directory + "/" + $name)
+
+// Easily style all form inputs that are standard text fields
+=text-inputs
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="url"],
+	input[type="color"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"]
+		@content
+
+=clear
+	zoom: 1
+	&:before, &:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+
+=breakpoints($min, $max: false)
+	@if $max == false
+		@media only screen and (min-width: $min)
+			@content
+	@else
+		@media only screen and (min-width: $min) and (max-width: $max)
+			@content
+
+
+=border_radius_even($a)
+	-webkit-border-radius: $a
+	-moz-border-radius: $a
+	border-radius: $a
+
+// border radius
+// d  a
+// c  b
+=border_radius($a, $b, $c, $d)
+	border-top-right-radius: $a
+	border-bottom-right-radius: $b
+	border-bottom-left-radius: $c
+	border-top-left-radius: $d
+
+=trasition($property, $duration: 0.3s, $function: ease-out)
+	-moz-transition: $property $duration $function
+	-o-transition: $property $duration $function
+	-webkit-transition: $property $duration $function
+	transition: $property $duration $function
+
+=gradient($baseColor, $toColor)
+	background-color: $baseColor
+	background-image: -moz-linear-gradient(top, $baseColor, $toColor)
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $baseColor), color-stop(1, $toColor))
+	background-image: linear-gradient(top, $baseColor, $toColor)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$baseColor', EndColorStr='$toColor')
+
+=shadow($off-x, $off-y, $blur, $color)
+	-moz-box-shadow: $off-y $off-x $blur $color
+	-webkit-box-shadow: $off-y $off-x $blur $color
+	box-shadow: $off-y $off-x $blur $color
+
+=rotate($deg)
+	-webkit-transform: rotate($deg)
+	-moz-transform: rotate($deg)
+	-o-transform: rotate($deg)
+	transform: rotate($deg)
+
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content

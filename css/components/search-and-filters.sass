@@ -1,0 +1,73 @@
+
+.search
+	border: 1px solid $gray_lighter
+	position: relative
+	+clear
+	+border_radius(2px, 0, 0, 2px)
+	+breakpoints(0, $VIEW_WIDTH)
+		+border_radius_even(2px)
+		margin-bottom: 20px
+	+breakpoints($VIEW_WIDTH)
+		& + .actions-bar
+			border-top: none
+	.search-box
+		+size(24)
+		font-style: italic
+		font-weight: 100
+		border: none
+		float: left
+		width: 100%
+		height: 53px
+		padding: 0 20px
+		&:focus
+			outline: none
+		+breakpoints(0, $VIEW_WIDTH)
+			border-bottom: 1px solid $gray_lighter
+	.filters
+		position: absolute
+		top: 0
+		right: 0
+		width: 440px
+		height: 53px
+		.filter-checkbox
+			border: 1px solid $gray_lighter
+			margin: 10px 10px 10px 0
+			padding: 8px
+			float: right
+			display: block
+			color: $gray_dark
+			line-height: 1
+			+border_radius_even(2px)
+			&:hover
+				cursor: pointer
+				background: $gray_lightest
+			.checkbox
+				float: left
+				margin-right: 10px
+		+breakpoints(0, $VIEW_WIDTH)
+			position: static
+			float: left
+			width: 100%
+			.filter-checkbox
+				float: left
+				margin: 10px 0 10px 10px
+.actions-bar
+	+border_radius(0, 2px, 2px, 0)
+	+clear
+	background: $gray_lightest
+	border: 1px solid $gray_lighter
+	clear: both
+	margin-bottom: 40px
+	+breakpoints(0, $VIEW_WIDTH)
+		+border_radius_even(2px)
+	a
+		+button(gray, 30px, 10px)
+		margin: 10px 0 10px 10px
+		&.disabled
+			+button(lightgray, 30px, 10px, true)
+			&:hover
+				cursor: default
+		&.right
+			float: right
+			margin-right: 10px
+			margin-left: 0

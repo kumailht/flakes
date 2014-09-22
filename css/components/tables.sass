@@ -1,0 +1,32 @@
+
+table
+	width: 100%
+	color: $gray_dark
+	font-weight: 300
+	td
+		white-space: nowrap
+		padding: 7px 10px
+	thead
+		border-bottom: 2px solid $gray_dark
+		font-weight: bold
+	tbody
+		tr
+			td
+				border-right: 1px solid $gray_lighter
+				border-bottom: 1px solid $gray_lighter
+				&:last-child
+					border-right: none
+			&:nth-child(2n)
+				background-color: #f9f9f9
+			&:hover td
+				background: $yellow_lighter
+			&:last-child td
+				border-bottom: none
+			&.selected td
+				background-color: $yellow_lighter
+	&.responsive
+		+breakpoints(0, $VIEW_WIDTH)
+			tr td
+				display: none
+				&:nth-child(1)
+					display: table-cell
