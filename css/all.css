@@ -337,6 +337,10 @@ h1, h2, h3, h4, h5, h6 {
   h1 + p, h1 + code, h1 + pre, h1 + ul, h1 + ol, h1 + table, h2 + p, h2 + code, h2 + pre, h2 + ul, h2 + ol, h2 + table, h3 + p, h3 + code, h3 + pre, h3 + ul, h3 + ol, h3 + table, h4 + p, h4 + code, h4 + pre, h4 + ul, h4 + ol, h4 + table, h5 + p, h5 + code, h5 + pre, h5 + ul, h5 + ol, h5 + table, h6 + p, h6 + code, h6 + pre, h6 + ul, h6 + ol, h6 + table {
     margin-top: 0; }
 
+h1 {
+  letter-spacing: -1px;
+  word-spacing: -1px; }
+
 .grid-1 {
   width: 100%;
   zoom: 1; }
