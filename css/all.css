@@ -320,7 +320,7 @@ table {
 html {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.35;
   color: #131a38;
   text-rendering: optimizeLegibility;
   font-family: Helvetica, Arial, sans-serif; }
@@ -333,13 +333,23 @@ a {
     color: #2c5aa0; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  max-width: 70ex; }
   h1 + p, h1 + code, h1 + pre, h1 + ul, h1 + ol, h1 + table, h2 + p, h2 + code, h2 + pre, h2 + ul, h2 + ol, h2 + table, h3 + p, h3 + code, h3 + pre, h3 + ul, h3 + ol, h3 + table, h4 + p, h4 + code, h4 + pre, h4 + ul, h4 + ol, h4 + table, h5 + p, h5 + code, h5 + pre, h5 + ul, h5 + ol, h5 + table, h6 + p, h6 + code, h6 + pre, h6 + ul, h6 + ol, h6 + table {
     margin-top: 0; }
 
 h1 {
   letter-spacing: -1px;
   word-spacing: -1px; }
+
+p {
+  max-width: 80ex; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
 
 .grid-1 {
   width: 100%;
@@ -5943,7 +5953,8 @@ form input[type=text], form input[type=email], form textarea, form select {
       float: left; }
   .flakes-frame .flakes-content .view-wrap {
     zoom: 1;
-    padding: 20px; }
+    padding: 20px;
+    padding-bottom: 60px; }
     .flakes-frame .flakes-content .view-wrap:before, .flakes-frame .flakes-content .view-wrap:after {
       content: "";
       display: table; }
@@ -5951,7 +5962,8 @@ form input[type=text], form input[type=email], form textarea, form select {
       clear: both; }
     @media only screen and (min-width: 1150px) {
       .flakes-frame .flakes-content .view-wrap {
-        padding: 30px 40px; } }
+        padding: 30px 40px;
+        padding-bottom: 60px; } }
 
 .flakes-breadcrumbs {
   font-size: 11px;
@@ -6023,12 +6035,14 @@ form input[type=text], form input[type=email], form textarea, form select {
     .flakes-activity-log > li:hover {
       background-color: #fbfbfb; }
 
-.pagination {
+.flakes-pagination {
+  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   margin: 20px 0; }
-  .pagination a {
+  .flakes-pagination a {
     color: #2a3b7e; }
-  .pagination input {
+  .flakes-pagination input {
     width: 30px;
     text-align: center;
     display: inline-block; }
@@ -6160,94 +6174,7 @@ form input[type=text], form input[type=email], form textarea, form select {
       width: 99.4%;
       height: 2px; }
 
-.buttons pre {
-  margin: 0; }
-.buttons a {
-  margin-bottom: 4px; }
-.buttons .button-1 {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  height: 50px;
-  line-height: 49px;
-  padding: 0 40px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  background-clip: padding-box;
-  border: 1px solid;
-  border-radius: 2px;
-  cursor: pointer;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: #5ca934;
-  text-shadow: 0 -1px #478228;
-  border-color: #478228 #478228 #3c6f22;
-  background-image: -webkit-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
-  background-image: -moz-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
-  background-image: -o-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
-  background-image: linear-gradient(to inverse-side(top), #69c03b, #5ca934 66%, #54992f); }
-  .buttons .button-1:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    background-image: -webkit-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-1:hover:before {
-    background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-    background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-    background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-    background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-1:active {
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-1:active:before {
-    content: none; }
-  .buttons .button-1:active {
-    background: #5ca934;
-    border-color: #3c6f22 #478228 #478228; }
-.buttons .button-2 {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  height: 50px;
-  line-height: 49px;
-  padding: 0 40px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  background-clip: padding-box;
-  border: 1px solid;
-  border-radius: 2px;
-  cursor: pointer;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: #dddddd;
-  text-shadow: 0 -1px #c4c4c4;
-  border-color: #c4c4c4 #c4c4c4 #b7b7b7;
-  background-image: -webkit-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: -moz-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: -o-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: linear-gradient(to inverse-side(top), #ececec, #dddddd 66%, lightgray); }
-  .buttons .button-2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    background-image: -webkit-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-.buttons .button-3 {
+.button-black {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6270,7 +6197,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
   background-image: -o-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
   background-image: linear-gradient(to inverse-side(top), #55585f, #47494f 66%, #3d3f44); }
-  .buttons .button-3:before {
+  .button-black.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-black.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-black.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-black.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-black:hover {
+    color: white;
+    text-decoration: none; }
+  .button-black:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6282,20 +6232,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-3:hover:before {
+  .button-black:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-3:active {
+  .button-black:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-3:active:before {
+  .button-black:active:before {
     content: none; }
-  .buttons .button-3:active {
+  .button-black:active {
     background: #47494f;
     border-color: #232427 #2f3034 #2f3034; }
-.buttons .button-4 {
+
+.button-red {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6318,7 +6269,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #da5c48, #d5452f 66%, #c73d28);
   background-image: -o-linear-gradient(top, #da5c48, #d5452f 66%, #c73d28);
   background-image: linear-gradient(to inverse-side(top), #da5c48, #d5452f 66%, #c73d28); }
-  .buttons .button-4:before {
+  .button-red.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-red.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-red.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-red.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-red:hover {
+    color: white;
+    text-decoration: none; }
+  .button-red:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6330,20 +6304,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-4:hover:before {
+  .button-red:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-4:active {
+  .button-red:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-4:active:before {
+  .button-red:active:before {
     content: none; }
-  .buttons .button-4:active {
+  .button-red:active {
     background: #d5452f;
     border-color: #992f1f #ae3623 #ae3623; }
-.buttons .button-5 {
+
+.button-blue {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6366,7 +6341,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #25a5f0, #1097e6 66%, #0f8ad3);
   background-image: -o-linear-gradient(top, #25a5f0, #1097e6 66%, #0f8ad3);
   background-image: linear-gradient(to inverse-side(top), #25a5f0, #1097e6 66%, #0f8ad3); }
-  .buttons .button-5:before {
+  .button-blue.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-blue.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-blue.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-blue.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-blue:hover {
+    color: white;
+    text-decoration: none; }
+  .button-blue:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6378,20 +6376,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-5:hover:before {
+  .button-blue:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-5:active {
+  .button-blue:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-5:active:before {
+  .button-blue:active:before {
     content: none; }
-  .buttons .button-5:active {
+  .button-blue:active {
     background: #1097e6;
     border-color: #0b689e #0d78b6 #0d78b6; }
-.buttons .button-6 {
+
+.button-orange {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6414,7 +6413,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #f69f47, #f4902a 66%, #f38617);
   background-image: -o-linear-gradient(top, #f69f47, #f4902a 66%, #f38617);
   background-image: linear-gradient(to inverse-side(top), #f69f47, #f4902a 66%, #f38617); }
-  .buttons .button-6:before {
+  .button-orange.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-orange.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-orange.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-orange.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-orange:hover {
+    color: white;
+    text-decoration: none; }
+  .button-orange:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6426,20 +6448,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-6:hover:before {
+  .button-orange:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-6:active {
+  .button-orange:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-6:active:before {
+  .button-orange:active:before {
     content: none; }
-  .buttons .button-6:active {
+  .button-orange:active {
     background: #f4902a;
     border-color: #c76a0a #df770c #df770c; }
-.buttons .button-7 {
+
+.button-pink {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6462,7 +6485,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #eb5190, #e8367f 66%, #e62473);
   background-image: -o-linear-gradient(top, #eb5190, #e8367f 66%, #e62473);
   background-image: linear-gradient(to inverse-side(top), #eb5190, #e8367f 66%, #e62473); }
-  .buttons .button-7:before {
+  .button-pink.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-pink.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-pink.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-pink.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-pink:hover {
+    color: white;
+    text-decoration: none; }
+  .button-pink:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6474,20 +6520,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-7:hover:before {
+  .button-pink:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-7:active {
+  .button-pink:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-7:active:before {
+  .button-pink:active:before {
     content: none; }
-  .buttons .button-7:active {
+  .button-pink:active {
     background: #e8367f;
     border-color: #bc165a #d31865 #d31865; }
-.buttons .button-8 {
+
+.button-darkblue {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6510,7 +6557,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #4369b6, #3b5ca0 66%, #365391);
   background-image: -o-linear-gradient(top, #4369b6, #3b5ca0 66%, #365391);
   background-image: linear-gradient(to inverse-side(top), #4369b6, #3b5ca0 66%, #365391); }
-  .buttons .button-8:before {
+  .button-darkblue.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-darkblue.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-darkblue.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-darkblue.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-darkblue:hover {
+    color: white;
+    text-decoration: none; }
+  .button-darkblue:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6522,20 +6592,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-8:hover:before {
+  .button-darkblue:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-8:active {
+  .button-darkblue:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-8:active:before {
+  .button-darkblue:active:before {
     content: none; }
-  .buttons .button-8:active {
+  .button-darkblue:active {
     background: #3b5ca0;
     border-color: #263c68 #2d477b #2d477b; }
-.buttons .button-9 {
+
+.button-purple {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6558,7 +6629,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #a87dd3, #9966cb 66%, #8f57c6);
   background-image: -o-linear-gradient(top, #a87dd3, #9966cb 66%, #8f57c6);
   background-image: linear-gradient(to inverse-side(top), #a87dd3, #9966cb 66%, #8f57c6); }
-  .buttons .button-9:before {
+  .button-purple.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-purple.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-purple.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-purple.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-purple:hover {
+    color: white;
+    text-decoration: none; }
+  .button-purple:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6570,20 +6664,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-9:hover:before {
+  .button-purple:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-9:active {
+  .button-purple:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-9:active:before {
+  .button-purple:active:before {
     content: none; }
-  .buttons .button-9:active {
+  .button-purple:active {
     background: #9966cb;
     border-color: #733aab #8040be #8040be; }
-.buttons .button-10 {
+
+.button-magenta {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6606,7 +6701,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #c54f7a, #b83d6a 66%, #a93861);
   background-image: -o-linear-gradient(top, #c54f7a, #b83d6a 66%, #a93861);
   background-image: linear-gradient(to inverse-side(top), #c54f7a, #b83d6a 66%, #a93861); }
-  .buttons .button-10:before {
+  .button-magenta.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-magenta.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-magenta.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-magenta.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-magenta:hover {
+    color: white;
+    text-decoration: none; }
+  .button-magenta:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6618,20 +6736,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-10:hover:before {
+  .button-magenta:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-10:active {
+  .button-magenta:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-10:active:before {
+  .button-magenta:active:before {
     content: none; }
-  .buttons .button-10:active {
+  .button-magenta:active {
     background: #b83d6a;
     border-color: #7f2a49 #923054 #923054; }
-.buttons .button-11 {
+
+.button-gray {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6654,7 +6773,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
   background-image: -o-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
   background-image: linear-gradient(to inverse-side(top), #55585f, #47494f 66%, #3d3f44); }
-  .buttons .button-11:before {
+  .button-gray.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-gray.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-gray.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-gray.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-gray:hover {
+    color: white;
+    text-decoration: none; }
+  .button-gray:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6666,20 +6808,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-11:hover:before {
+  .button-gray:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-11:active {
+  .button-gray:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-11:active:before {
+  .button-gray:active:before {
     content: none; }
-  .buttons .button-11:active {
+  .button-gray:active {
     background: #47494f;
     border-color: #232427 #2f3034 #2f3034; }
-.buttons .button-12 {
+
+.button-lightgray {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6695,14 +6838,37 @@ form input[type=text], form input[type=email], form textarea, form select {
   cursor: pointer;
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: #dddddd;
-  text-shadow: 0 -1px #c4c4c4;
-  border-color: #c4c4c4 #c4c4c4 #b7b7b7;
-  background-image: -webkit-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: -moz-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: -o-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-  background-image: linear-gradient(to inverse-side(top), #ececec, #dddddd 66%, lightgray); }
-  .buttons .button-12:before {
+  background: #aaaaaa;
+  text-shadow: 0 -1px #909090;
+  border-color: #909090 #909090 #848484;
+  background-image: -webkit-linear-gradient(top, #b9b9b9, #aaaaaa 66%, #a0a0a0);
+  background-image: -moz-linear-gradient(top, #b9b9b9, #aaaaaa 66%, #a0a0a0);
+  background-image: -o-linear-gradient(top, #b9b9b9, #aaaaaa 66%, #a0a0a0);
+  background-image: linear-gradient(to inverse-side(top), #b9b9b9, #aaaaaa 66%, #a0a0a0); }
+  .button-lightgray.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-lightgray.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-lightgray.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-lightgray.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-lightgray:hover {
+    color: white;
+    text-decoration: none; }
+  .button-lightgray:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6714,20 +6880,21 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-12:hover:before {
+  .button-lightgray:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-12:active {
+  .button-lightgray:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-12:active:before {
+  .button-lightgray:active:before {
     content: none; }
-  .buttons .button-12:active {
-    background: #dddddd;
-    border-color: #b7b7b7 #c4c4c4 #c4c4c4; }
-.buttons .button-13 {
+  .button-lightgray:active {
+    background: #aaaaaa;
+    border-color: #848484 #909090 #909090; }
+
+.button-green {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -6750,7 +6917,30 @@ form input[type=text], form input[type=email], form textarea, form select {
   background-image: -moz-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
   background-image: -o-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
   background-image: linear-gradient(to inverse-side(top), #69c03b, #5ca934 66%, #54992f); }
-  .buttons .button-13:before {
+  .button-green.massive {
+    height: 54px;
+    line-height: 53px;
+    padding: 0 50px;
+    font-size: 180%; }
+  .button-green.bigger {
+    height: 43.2px;
+    line-height: 42.2px;
+    padding: 0 40px;
+    font-size: 120%; }
+  .button-green.smaller {
+    height: 28.8px;
+    line-height: 27.8px;
+    padding: 0 10px;
+    font-size: 80%; }
+  .button-green.tiny {
+    height: 18px;
+    line-height: 17px;
+    padding: 0 9.09091px;
+    font-size: 60%; }
+  .button-green:hover {
+    color: white;
+    text-decoration: none; }
+  .button-green:before {
     content: "";
     position: absolute;
     top: 0;
@@ -6762,43 +6952,43 @@ form input[type=text], form input[type=email], form textarea, form select {
     background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-  .buttons .button-13:hover:before {
+  .button-green:hover:before {
     background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
     background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-  .buttons .button-13:active {
+  .button-green:active {
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-  .buttons .button-13:active:before {
+  .button-green:active:before {
     content: none; }
-  .buttons .button-13:active {
+  .button-green:active {
     background: #5ca934;
     border-color: #3c6f22 #478228 #478228; }
 
-.search {
+.flakes-search {
+  zoom: 1;
   border: 1px solid #eeeeee;
   position: relative;
-  zoom: 1;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 2px; }
-  .search:before, .search:after {
+  .flakes-search:before, .flakes-search:after {
     content: "";
     display: table; }
-  .search:after {
+  .flakes-search:after {
     clear: both; }
   @media only screen and (min-width: 0) and (max-width: 900px) {
-    .search {
+    .flakes-search {
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
       border-radius: 2px;
       margin-bottom: 20px; } }
   @media only screen and (min-width: 900px) {
-    .search + .actions-bar {
+    .flakes-search + .actions-bar {
       border-top: none; } }
-  .search .search-box {
+  .flakes-search .search-box {
     font-size: 24px;
     font-size: 1.5rem;
     font-style: italic;
@@ -6808,18 +6998,18 @@ form input[type=text], form input[type=email], form textarea, form select {
     width: 100%;
     height: 53px;
     padding: 0 20px; }
-    .search .search-box:focus {
+    .flakes-search .search-box:focus {
       outline: none; }
     @media only screen and (min-width: 0) and (max-width: 900px) {
-      .search .search-box {
+      .flakes-search .search-box {
         border-bottom: 1px solid #eeeeee; } }
-  .search .filters {
+  .flakes-search .filters {
     position: absolute;
     top: 0;
     right: 0;
     width: 440px;
     height: 53px; }
-    .search .filters .filter-checkbox {
+    .flakes-search .filters .filter-checkbox {
       border: 1px solid #eeeeee;
       margin: 10px 10px 10px 0;
       padding: 8px;
@@ -6830,157 +7020,73 @@ form input[type=text], form input[type=email], form textarea, form select {
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
       border-radius: 2px; }
-      .search .filters .filter-checkbox:hover {
+      .flakes-search .filters .filter-checkbox:hover {
         cursor: pointer;
         background: #f9f9f9; }
-      .search .filters .filter-checkbox .checkbox {
+      .flakes-search .filters .filter-checkbox .checkbox {
         float: left;
         margin-right: 10px; }
     @media only screen and (min-width: 0) and (max-width: 900px) {
-      .search .filters {
+      .flakes-search .filters {
         position: static;
         float: left;
         width: 100%; }
-        .search .filters .filter-checkbox {
+        .flakes-search .filters .filter-checkbox {
           float: left;
           margin: 10px 0 10px 10px; } }
 
-.actions-bar {
+.flakes-actions-bar {
+  zoom: 1;
+  clear: both;
+  background: #f9f9f9;
+  border: 1px solid #eeeeee;
   border-top-right-radius: 0;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   border-top-left-radius: 0;
-  zoom: 1;
-  background: #f9f9f9;
-  border: 1px solid #eeeeee;
-  clear: both;
-  margin-bottom: 40px; }
-  .actions-bar:before, .actions-bar:after {
+  margin-bottom: 20px; }
+  .flakes-actions-bar:before, .flakes-actions-bar:after {
     content: "";
     display: table; }
-  .actions-bar:after {
+  .flakes-actions-bar:after {
     clear: both; }
   @media only screen and (min-width: 0) and (max-width: 900px) {
-    .actions-bar {
+    .flakes-actions-bar {
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
       border-radius: 2px; } }
-  .actions-bar a {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    height: 30px;
-    line-height: 29px;
-    padding: 0 10px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    background-clip: padding-box;
-    border: 1px solid;
-    border-radius: 2px;
-    cursor: pointer;
-    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-    background: #47494f;
-    text-shadow: 0 -1px #2f3034;
-    border-color: #2f3034 #2f3034 #232427;
-    background-image: -webkit-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
-    background-image: -moz-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
-    background-image: -o-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
-    background-image: linear-gradient(to inverse-side(top), #55585f, #47494f 66%, #3d3f44);
+  .flakes-actions-bar .action {
     margin: 10px 0 10px 10px; }
-    .actions-bar a:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      background-image: -webkit-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-      background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-      background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-      background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-    .actions-bar a:hover:before {
-      background-image: -webkit-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-      background-image: -moz-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-      background-image: -o-radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
-      background-image: radial-gradient(farthest-corner, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)); }
-    .actions-bar a:active {
-      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
-    .actions-bar a:active:before {
-      content: none; }
-    .actions-bar a:active {
-      background: #47494f;
-      border-color: #232427 #2f3034 #2f3034; }
-    .actions-bar a.disabled {
-      position: relative;
-      display: inline-block;
-      vertical-align: top;
-      height: 30px;
-      line-height: 29px;
-      padding: 0 10px;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      background-clip: padding-box;
-      border: 1px solid;
-      border-radius: 2px;
-      cursor: pointer;
-      -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-      box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-      background: #dddddd;
-      text-shadow: 0 -1px #c4c4c4;
-      border-color: #c4c4c4 #c4c4c4 #b7b7b7;
-      background-image: -webkit-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-      background-image: -moz-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-      background-image: -o-linear-gradient(top, #ececec, #dddddd 66%, lightgray);
-      background-image: linear-gradient(to inverse-side(top), #ececec, #dddddd 66%, lightgray); }
-      .actions-bar a.disabled:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        pointer-events: none;
-        background-image: -webkit-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-        background-image: -moz-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-        background-image: -o-radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-        background-image: radial-gradient(center top, farthest-corner, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)); }
-      .actions-bar a.disabled:hover {
-        cursor: default; }
-    .actions-bar a.right {
+    .flakes-actions-bar .action.right {
       float: right;
       margin-right: 10px;
       margin-left: 0; }
 
-table {
+table.flakes-table {
   width: 100%;
   color: #333333;
   font-weight: 300; }
-  table td {
+  table.flakes-table td {
     white-space: nowrap;
     padding: 7px 10px; }
-  table thead {
+  table.flakes-table thead {
     border-bottom: 2px solid #333333;
     font-weight: bold; }
-  table tbody tr td {
+  table.flakes-table tbody tr td {
     border-right: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee; }
-    table tbody tr td:last-child {
+    table.flakes-table tbody tr td:last-child {
       border-right: none; }
-  table tbody tr:nth-child(2n) {
+  table.flakes-table tbody tr:nth-child(2n) {
     background-color: #f9f9f9; }
-  table tbody tr:hover td {
+  table.flakes-table tbody tr:hover td {
     background: #fffded; }
-  table tbody tr:last-child td {
+  table.flakes-table tbody tr:last-child td {
     border-bottom: none; }
-  table tbody tr.selected td {
+  table.flakes-table tbody tr.selected td {
     background-color: #fffded; }
   @media only screen and (min-width: 0) and (max-width: 900px) {
-    table.responsive tr td {
+    table.flakes-table.responsive tr td {
       display: none; }
-      table.responsive tr td:nth-child(1) {
+      table.flakes-table.responsive tr td:nth-child(1) {
         display: table-cell; } }

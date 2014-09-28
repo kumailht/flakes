@@ -19,6 +19,35 @@
 	border-radius: 2px
 	cursor: pointer
 	+box-shadow(inset 0 1px rgba(white, 0.1), inset 0 0 0 1px rgba(white, 0.08), 0 1px 2px rgba(black, 0.25))
+
+	&.massive
+		height: ($height * 1.5)
+		line-height: ($height * 1.5) - 1px
+		padding: 0 ($padding-sides * 2.5)
+		font-size: 180%
+
+	&.bigger
+		height: ($height * 1.2)
+		line-height: ($height * 1.2) - 1px
+		padding: 0 ($padding-sides * 2)
+		font-size: 120%
+
+	&.smaller
+		height: ($height * 0.8)
+		line-height: ($height * 0.8) - 1px
+		padding: 0 ($padding-sides / 2)
+		font-size: 80%
+
+	&.tiny
+		height: ($height * 0.5)
+		line-height: ($height * 0.5) - 1px
+		padding: 0 ($padding-sides / 2.2)
+		font-size: 60%
+
+	&:hover
+		color: white
+		text-decoration: none
+
 	&:before
 		content: ''
 		position: absolute
@@ -28,6 +57,7 @@
 		right: 0
 		pointer-events: none
 		+radial-gradient(center top, farthest-corner, rgba(white, 0.08), rgba(white, 0))
+
 	@if $disabled == false
 		&:hover:before
 			+radial-gradient(farthest-corner, rgba(white, 0.18), rgba(white, 0.03))
@@ -35,7 +65,8 @@
 			+box-shadow(inset 0 1px 2px rgba(black, 0.2))
 		&:active:before
 			content: none
-	$colors: green #5ca934, red #d5452f, blue #1097e6, orange #f4902a, pink #e8367f, gray #47494f, lightgray #ddd, darkblue #3b5ca0, purple #9966cb, magenta #b83d6a
+
+	$colors: green #5ca934, red #d5452f, blue #1097e6, orange #f4902a, pink #e8367f, gray #47494f, lightgray #aaa, darkblue #3b5ca0, purple #9966cb, magenta #b83d6a
 	@each $pair in $colors
 		@if nth($pair, 1) == $button-color
 			$color: nth($pair, 2)
@@ -48,34 +79,25 @@
 					background: $color
 					border-color: darken($color, 15%) darken($color, 10%) darken($color, 10%)
 
-.buttons
-	pre
-		margin: 0
-	a
-		margin-bottom: 4px
-	.button-1
-		+button(green, 50px, 40px)
-	.button-2
-		+button(lightgray, 50px, 40px, true)
-	.button-3
-		+button
-	.button-4
-		+button(red)
-	.button-5
-		+button(blue)
-	.button-6
-		+button(orange)
-	.button-7
-		+button(pink)
-	.button-8
-		+button(darkblue)
-	.button-9
-		+button(purple)
-	.button-10
-		+button(magenta)
-	.button-11
-		+button(gray)
-	.button-12
-		+button(lightgray)
-	.button-13
-		+button(green)
+.button-black
+	+button
+.button-red
+	+button(red)
+.button-blue
+	+button(blue)
+.button-orange
+	+button(orange)
+.button-pink
+	+button(pink)
+.button-darkblue
+	+button(darkblue)
+.button-purple
+	+button(purple)
+.button-magenta
+	+button(magenta)
+.button-gray
+	+button(gray)
+.button-lightgray
+	+button(lightgray)
+.button-green
+	+button(green)

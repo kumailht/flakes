@@ -1,8 +1,8 @@
 
-.search
+.flakes-search
+	+clear
 	border: 1px solid $gray_lighter
 	position: relative
-	+clear
 	+border_radius(2px, 0, 0, 2px)
 	+breakpoints(0, $VIEW_WIDTH)
 		+border_radius_even(2px)
@@ -51,22 +51,18 @@
 			.filter-checkbox
 				float: left
 				margin: 10px 0 10px 10px
-.actions-bar
-	+border_radius(0, 2px, 2px, 0)
+
+.flakes-actions-bar
 	+clear
+	clear: both
 	background: $gray_lightest
 	border: 1px solid $gray_lighter
-	clear: both
-	margin-bottom: 40px
+	+border_radius(0, 2px, 2px, 0)
+	margin-bottom: 20px
 	+breakpoints(0, $VIEW_WIDTH)
 		+border_radius_even(2px)
-	a
-		+button(gray, 30px, 10px)
+	.action
 		margin: 10px 0 10px 10px
-		&.disabled
-			+button(lightgray, 30px, 10px, true)
-			&:hover
-				cursor: default
 		&.right
 			float: right
 			margin-right: 10px
