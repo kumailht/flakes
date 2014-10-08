@@ -5943,7 +5943,28 @@ form > ul > li {
   form > ul > li > label:first-child {
     font-weight: bold;
     display: block; }
-form input[type=text], form input[type=email], form textarea, form select {
+form label {
+  display: inline-block; }
+form input[type="color"],
+form input[type="date"],
+form input[type="datetime"],
+form input[type="datetime-local"],
+form input[type="email"],
+form input[type="file"],
+form input[type="hidden"],
+form input[type="image"],
+form input[type="month"],
+form input[type="number"],
+form input[type="password"],
+form input[type="range"],
+form input[type="search"],
+form input[type="tel"],
+form input[type="text"],
+form input[type="time"],
+form input[type="url"],
+form input[type="week"],
+form select,
+form textarea {
   padding: 6px 6px;
   width: 100%;
   line-height: 1.4;
