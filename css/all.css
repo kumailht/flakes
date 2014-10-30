@@ -6045,10 +6045,8 @@ form textarea {
     .flakes-frame .flakes-content .flakes-mobile-top-bar .logo-wrap {
       float: right;
       margin: 15px 20px; }
-      .flakes-frame .flakes-content .flakes-mobile-top-bar .logo-wrap img {
-        height: 40px; }
     .flakes-frame .flakes-content .flakes-mobile-top-bar .navigation-expand-target {
-      margin: 25px 20px;
+      margin: 17px 20px;
       float: left; }
   .flakes-frame .flakes-content .view-wrap {
     zoom: 1;
