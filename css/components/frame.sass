@@ -10,10 +10,6 @@
 		padding: 50px 0 30px
 		+size(14)
 
-		// +breakpoints($NAV_AND_VIEW_WIDTH)
-		// 	position: fixed
-		// 	overflow-y: scroll
-
 		+breakpoints(0, $NAV_AND_VIEW_WIDTH)
 			display: block
 			position: absolute
@@ -43,7 +39,7 @@
 				font-weight: bold
 				line-height: 30px
 				text-indent: 30px
-				padding-right: 30px
+				padding-right: 20px
 				white-space: nowrap
 				overflow: hidden
 				text-overflow: ellipsis
@@ -51,6 +47,17 @@
 				&.title
 					color: $gray_light
 					font-weight: normal
+
+				&.expandable
+					&:hover
+						cursor: pointer
+						ul:hover
+							cursor: default
+							a
+								cursor: pointer
+
+					> a
+						color: red
 
 				&.expanded
 					background: #F9F9F9
@@ -68,7 +75,7 @@
 
 					> li
 						background: #F9F9F9
-						border-top: 1px dashed darken($gray_lighter, 2%)
+						border-top: 1px solid lighten($gray_lighter, 1%)
 
 	.flakes-content
 		float: left

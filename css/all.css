@@ -345,6 +345,9 @@ h1 {
 p {
   max-width: 80ex; }
 
+p.ignore-max-width {
+  max-width: none; }
+
 .right {
   float: right; }
 
@@ -6003,13 +6006,21 @@ form textarea {
       font-weight: bold;
       line-height: 30px;
       text-indent: 30px;
-      padding-right: 30px;
+      padding-right: 20px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
       .flakes-frame .flakes-navigation > ul > li.title {
         color: #999999;
         font-weight: normal; }
+      .flakes-frame .flakes-navigation > ul > li.expandable:hover {
+        cursor: pointer; }
+        .flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover {
+          cursor: default; }
+          .flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover a {
+            cursor: pointer; }
+      .flakes-frame .flakes-navigation > ul > li.expandable > a {
+        color: red; }
       .flakes-frame .flakes-navigation > ul > li.expanded {
         background: #f9f9f9; }
         .flakes-frame .flakes-navigation > ul > li.expanded > ul {
@@ -6023,7 +6034,7 @@ form textarea {
         display: none; }
         .flakes-frame .flakes-navigation > ul > li > ul > li {
           background: #f9f9f9;
-          border-top: 1px dashed #e9e9e9; }
+          border-top: 1px solid #f1f1f1; }
 .flakes-frame .flakes-content {
   float: left;
   width: 100%;
