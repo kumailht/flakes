@@ -1,0 +1,10 @@
+{
+  "name": "Flakes Framework",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "snapjs": "~1.9.3",
+    "responsive-elements": "~1.0.0",
+    "gridforms": "~1.0.2"
+  }
+}
