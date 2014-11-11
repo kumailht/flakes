@@ -1,4 +1,3 @@
-// TODO: Frame and Nav height should always be the same. Avoid lots of bugs
 .flakes-frame
 	$NAV_AND_VIEW_WIDTH: $VIEW_WIDTH + $NAVIGATION_WIDTH
 
@@ -28,21 +27,22 @@
 			padding: 0
 			margin: 0 0 20px 0
 
-			a
-				color: $gray
-				text-decoration: none
-				&:hover
-					text-decoration: underline
-
 			> li
 				border-bottom: 1px solid darken($gray_lighter, 2%)
 				font-weight: bold
 				line-height: 30px
 				text-indent: 30px
-				padding-right: 20px
 				white-space: nowrap
 				overflow: hidden
 				text-overflow: ellipsis
+
+				a
+					display: block
+					padding-right: 20px
+					color: $gray
+					text-decoration: none
+					&:hover
+						text-decoration: underline
 
 				&.title
 					color: $gray_light
@@ -84,7 +84,6 @@
 		background-color: white
 		+breakpoints($NAV_AND_VIEW_WIDTH)
 			width: $VIEW_WIDTH
-			// margin-left: $NAVIGATION_WIDTH
 
 		.flakes-mobile-top-bar
 			border-bottom: 1px solid $gray_lighter

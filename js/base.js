@@ -13,11 +13,11 @@ var FlakesFrame = {
 	},
 	equalizeHeights: function() {
 		var tallestColumn = Math.max(
-				this.el.flakes_frame.navigation.height(), this.el.flakes_frame.content.height()
+				this.el.flakes_frame.navigation.outerHeight(), this.el.flakes_frame.content.outerHeight()
 			);
 
-		this.el.flakes_frame.navigation.height(tallestColumn);
-		this.el.flakes_frame.content.height(tallestColumn);
+		this.el.flakes_frame.navigation.outerHeight(tallestColumn);
+		this.el.flakes_frame.content.outerHeight(tallestColumn);
 	},
 	setupSnaping: function() {
 		if (globals.ie === undefined || (globals.ie && globals.ie >= 10)) {
