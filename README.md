@@ -3,7 +3,6 @@
 [http://getflakes.com](http://getflakes.com)
 
 Flakes is an Admin Template Framework. A combination of CSS Libraries, JavaScript Libraries and Design files that help you build business tools very quickly.
-[Get Flakes]
 
 ## Getting Started
 
