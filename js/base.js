@@ -1,8 +1,31 @@
-// Check to see if element you're operating on exists to avoid faluire when it doesn't
+
+var ie_version = function() {
+	// ----------------------------------------------------------
+	// A short snippet for detecting versions of IE in JavaScript
+	// without resorting to user-agent sniffing.
+	// Credit: James Padolsey
+	// Link: https://gist.github.com/padolsey/527683
+	// ----------------------------------------------------------
+	var undef,
+		v = 3,
+		div = document.createElement('div'),
+		all = div.getElementsByTagName('i');
+	while (
+		div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+		all[0]
+	);
+	return v > 4 ? v : undef;
+}();
+
+var isMobileDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i)
+	.test(navigator.userAgent);
 
 var FlakesFrame = {
 	init: function() {
+		// DOM element map
 		this.el = {
+			body: $('body'),
+			navigation_expand_target: $('.flakes-mobile-top-bar .navigation-expand-target'),
 			flakes_frame: {
 				container: $('.flakes-frame'),
 				navigation: $('.flakes-frame .flakes-navigation'),
@@ -13,44 +36,50 @@ var FlakesFrame = {
 	},
 	equalizeHeights: function() {
 		var tallestColumn = Math.max(
-				this.el.flakes_frame.navigation.outerHeight(), this.el.flakes_frame.content.outerHeight()
-			);
+			this.el.flakes_frame.navigation.outerHeight(),
+			this.el.flakes_frame.content.outerHeight()
+		);
 
 		this.el.flakes_frame.navigation.outerHeight(tallestColumn);
 		this.el.flakes_frame.content.outerHeight(tallestColumn);
 	},
+	dumbSnappingFallback: function() {
+		var that = this;
+		this.el.navigation_expand_target.click(function() {
+			that.el.flakes_frame.navigation.css({
+				'z-index': '10'
+			}).show();
+			return false;
+		});
+
+		this.el.flakes_frame.content.click(function() {
+			that.el.flakes_frame.navigation.hide();
+		});
+	},
 	setupSnaping: function() {
-		if (globals.ie === undefined || (globals.ie && globals.ie >= 10)) {
-			var snapper = new Snap({
-				element: $('.flakes-content')[0],
-				disable: 'right',
-				maxPosition: 250,
-				minPosition: -250
-			});
-
-			if (!Utils.isMobileDevice()) $('body').attr('data-snap-ignore', 'true');
-
-			$('.flakes-mobile-top-bar .navigation-expand-target').click(function() {
-				if (snapper.state().state == "left") {
-					snapper.close();
-				} else {
-					snapper.open('left');
-				}
-				return false;
-			});
-		} else if (globals.ie && globals.ie <= 9) {
-			$('.flakes-mobile-top-bar .navigation-expand-target').click(function() {
-				$('.flakes-navigation').css({
-					'z-index': '10',
-					'background': 'white'
-				}).show();
-				return false;
-			});
-
-			$('.flakes-content').click(function() {
-				$('.flakes-navigation').hide();
-			});
+		if (ie_version && ie_version <= 9) {
+			this.dumbSnappingFallback();
 		}
+
+		var snapper = new Snap({
+			element: this.el.flakes_frame.content[0],
+			disable: 'right',
+			maxPosition: 250,
+			minPosition: -250
+		});
+
+		if (!isMobileDevice) {
+			this.el.body.attr('data-snap-ignore', 'true');
+		}
+
+		this.el.navigation_expand_target.click(function() {
+			if (snapper.state().state == "left") {
+				snapper.close();
+			} else {
+				snapper.open('left');
+			}
+			return false;
+		});
 	},
 	events: function() {
 		this.equalizeHeights();
@@ -58,36 +87,7 @@ var FlakesFrame = {
 	}
 }
 
-var FlakesNavigation = {
-	init: function() {
-		this.el = {
-			expandable_items: $('.flakes-navigation .expandable'),
-			expandable_active_items: $('.flakes-navigation .expandable.active')
-		};
-
-		this.events();
-	},
-	expandActiveItems: function() {
-		var that = this;
-		this.el.expandable_active_items.each(function() {
-			that.expandItem($(this));
-		});
-	},
-	expandItem: function(item) {
-		item.toggleClass('expanded');
-	},
-	events: function() {
-		var that = this;
-		this.expandActiveItems();
-
-		this.el.expandable_items.click(function(event) {
-			event.preventDefault();
-			that.expandItem($(this));
-		});
-	}
-};
-
+// Initialize modules when DOM is ready
 jQuery(function() {
 	FlakesFrame.init();
-	FlakesNavigation.init();
-})
+});

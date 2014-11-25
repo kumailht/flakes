@@ -312,10 +312,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+html {
   box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
 
 html {
   font-size: 16px;
@@ -351,12 +352,6 @@ p {
 
 p.ignore-max-width {
   max-width: none; }
-
-.right {
-  float: right; }
-
-.left {
-  float: left; }
 
 .grid-1 {
   width: 100%;

@@ -6,16 +6,22 @@
 // |_|   |_|\__,_|_|\_\___||___/
 // 
 
-// Normalize require for Flakes to build on
+// Import global variables & colors
 @import "config/general"
 @import "config/colors"
+
+// Import utility functions
 @import "utils/general"
 
-// Basic global styles required for Flakes to function
+// Normalize makes browsers render all elements more consistently and
+// in line with modern standards. These are global styles.
 @import "lib/normalize"
-@import "global"
 
-// Namespaced component framework
+// Global styles that are required for components to work.
+@import "global"
+@import "components/typography"
+
+// Namespaced components that only take effect when used specifically.
 @import "components/grid"
 @import "components/forms"
 @import "components/frame"

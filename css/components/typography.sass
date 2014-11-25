@@ -1,0 +1,31 @@
+
+html
+	+size(16)
+	+breakpoints(0, $VIEW_WIDTH)
+		+size(14)
+	line-height: 1.35
+	color: $body_text_color
+	text-rendering: optimizeLegibility
+	font-family: $SANS_TYPE
+
+a
+	text-decoration: none
+	color: $link_color
+	&:hover
+		text-decoration: underline
+		color: darken($link_color, 10%)
+
+h1, h2, h3, h4, h5, h6
+	margin-bottom: 5px
+	max-width: 70ex
+	& + p, & + code, & + pre, & + ul, & + ol, & + table
+		margin-top: 0
+h1
+	letter-spacing: -1px
+	word-spacing: -1px
+
+@if $LIMIT_LINE_LENGTH
+	p
+		max-width: 80ex
+	p.ignore-max-width
+		max-width: none
