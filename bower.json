@@ -1,6 +1,6 @@
 {
   "name": "flakes",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "jquery": "~2.1.1",
     "snapjs": "~1.9.3",
