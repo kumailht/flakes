@@ -35,3 +35,7 @@ If you need help with something the documentation does not cover, send me an ema
 ### Report a bug
 
 Please report all bugs on the Github issues page. If you have some time, I'd appreciate it a whole lot more if you could make a pull request with a fix.
+
+-------------------
+
+Najam, Najam.
