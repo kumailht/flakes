@@ -91,3 +91,11 @@ var FlakesFrame = {
 jQuery(function() {
 	FlakesFrame.init();
 });
+
+
+// Create Draggable Objects
+$(function() {
+    $( ".draggable" ).draggable({ snap: true });
+    $( ".draggable" ).draggable({ snap: ".snap-box", snapMode: "inner" });
+});
+// add the ability to snap to boxes and add a page to display it
