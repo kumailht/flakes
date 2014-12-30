@@ -1,3 +1,7 @@
+bdunnette:gridforms@1.0.0
+bdunnette:responsive-elements@1.0.0
+bdunnette:snapjs@1.0.0
 flakes:flakes@1.0.0
+jquery@1.0.2
 meteor@1.1.4
 underscore@1.0.2

@@ -1,5 +1,5 @@
-# Publish package on Meteor's Atmosphere.js
 #!/bin/bash
+# Publish package on Meteor's Atmosphere.js
 
 # Call this script from the projects root,
 # i.e. not from the meteor/ subdirectory)
