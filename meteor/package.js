@@ -13,6 +13,10 @@ Package.describe({
 
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.0');
+  api.use('jquery', 'client');
+  api.use('bdunnette:snapjs@1.0.0', 'client');
+  api.use('bdunnette:responsive-elements@1.0.0', 'client');
+  api.use('bdunnette:gridforms@1.0.0', 'client');
   api.addFiles([
     'css/all.css',
     'js/base.js'
