@@ -7,7 +7,7 @@ var where = 'client';  // where to install: 'client' or 'server'. For both, pass
 Package.describe({
   name: packageName,
   summary: 'flakes (official) - Design & Frontend Framework for internal business applications',
-  version: '1.0.0',
+  version: '1.0.0_1',
   git: 'https://github.com/ls42/flakes.git' // Should change later to a MeteorPackaging URL
 });
 
