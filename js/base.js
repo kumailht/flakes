@@ -56,12 +56,12 @@ var FlakesFrame = {
 			that.el.flakes_frame.navigation.hide();
 		});
 	},
-	setupSnaping: function() {
+	setupSnapping: function() {
 		if (ie_version && ie_version <= 9) {
 			this.dumbSnappingFallback();
 		}
 
-		this.snapper = new Snap({
+		var snapper = new Snap({
 			element: this.el.flakes_frame.content[0],
 			disable: 'right',
 			maxPosition: 250,
@@ -73,17 +73,21 @@ var FlakesFrame = {
 		}
 
 		this.el.navigation_expand_target.click(function() {
-			if (this.snapper.state().state == "left") {
-				this.snapper.close();
+			if (snapper.state().state == "left") {
+				snapper.close();
 			} else {
-				this.snapper.open('left');
+				snapper.open('left');
 			}
 			return false;
 		});
+
+		this.snapper = snapper;
 	},
+
+
 	events: function() {
 		this.equalizeHeights();
-		this.setupSnaping();
+		this.setupSnapping();
 	}
 };
 
