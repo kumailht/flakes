@@ -61,7 +61,7 @@ var FlakesFrame = {
 			this.dumbSnappingFallback();
 		}
 
-		var snapper = new Snap({
+		this.snapper = new Snap({
 			element: this.el.flakes_frame.content[0],
 			disable: 'right',
 			maxPosition: 250,
@@ -73,10 +73,10 @@ var FlakesFrame = {
 		}
 
 		this.el.navigation_expand_target.click(function() {
-			if (snapper.state().state == "left") {
-				snapper.close();
+			if (this.snapper.state().state == "left") {
+				this.snapper.close();
 			} else {
-				snapper.open('left');
+				this.snapper.open('left');
 			}
 			return false;
 		});
@@ -85,7 +85,7 @@ var FlakesFrame = {
 		this.equalizeHeights();
 		this.setupSnaping();
 	}
-}
+};
 
 // Initialize modules when DOM is ready
 jQuery(function() {
