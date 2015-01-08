@@ -56,7 +56,7 @@ var FlakesFrame = {
 			that.el.flakes_frame.navigation.hide();
 		});
 	},
-	setupSnaping: function() {
+	setupSnapping: function() {
 		if (ie_version && ie_version <= 9) {
 			this.dumbSnappingFallback();
 		}
@@ -80,12 +80,16 @@ var FlakesFrame = {
 			}
 			return false;
 		});
+
+		this.snapper = snapper;
 	},
+
+
 	events: function() {
 		this.equalizeHeights();
-		this.setupSnaping();
+		this.setupSnapping();
 	}
-}
+};
 
 // Initialize modules when DOM is ready
 jQuery(function() {
