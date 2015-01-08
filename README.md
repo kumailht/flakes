@@ -1,4 +1,5 @@
-# Flakes
+#
+Flakes
 
 [http://getflakes.com](http://getflakes.com)
 
@@ -20,7 +21,7 @@ I've built a few example layouts for you play around with. Check out the example
 
 ### Quick Start Guide
 
-1.  **Download** the Flakes framework on [Github](https://github.com/kumailht/flakes).
+1.  **Download** the Flakes framework on [Github](https://github.com/kumailht/flakes) or using `npm install --save-dev flakes`.
 2.  **Install** Dependencies using the "bower install" command. If you don't have the Bower Package Manager, install it using the instructions on their [official site](http://bower.io/).
 3.  **Example.html** has some boilerplate code that you can use to get started.
 
