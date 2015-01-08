@@ -1,5 +1,4 @@
-#
-Flakes
+# Flakes
 
 [http://getflakes.com](http://getflakes.com)
 
