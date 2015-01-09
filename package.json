@@ -1,0 +1,22 @@
+{
+  "name": "flakes",
+  "version": "1.0.1",
+  "description": "[http://getflakes.com](http://getflakes.com)",
+  "main": "js/base.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kumailht/flakes"
+  },
+  "author": "kumailht",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kumailht/flakes/issues"
+  },
+  "homepage": "https://github.com/kumailht/flakes",
+  "devDependencies": {
+    "bower": "^1.3.12"
+  }
+}
