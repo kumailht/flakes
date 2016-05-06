@@ -26,6 +26,10 @@ I've built a few example layouts for you play around with. Check out the example
 
 ### How do I contribute to Flakes?
 
+Install global gulp: ```npm install --global gulp-cli```
+Install local gulp and plugins: ```npm install```  
+Run build task: ```gulp```
+Run gulp watcher (optional, this will run gulp every time your files change): ```gulp watch```
 
 Until now, Flakes has been a one man show with me designing and developing for it. When you work on something for long enough, you'll run out of ideas on how to improve it. If you are keen on contributing I'd love to have you make a pull request with your change. If it's a sufficiently big change, I'd recommend filing an issue on Github to discuss the change to avoid duplicate or unnecessary work.
 
