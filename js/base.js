@@ -1,4 +1,13 @@
-
+(function (root, factory) {
+	if (typeof module === 'object' && module.exports) {
+		module.exports = factory;
+	} else {
+		root.FlakesFrame = factory(root.jQuery, root.Snap);
+		root.jQuery(function () {
+			root.FlakesFrame.init();
+		});
+	}
+}(this, function ($, Snap) {
 var ie_version = function() {
 	// ----------------------------------------------------------
 	// A short snippet for detecting versions of IE in JavaScript
@@ -91,7 +100,5 @@ var FlakesFrame = {
 	}
 };
 
-// Initialize modules when DOM is ready
-jQuery(function() {
-	FlakesFrame.init();
-});
+return FlakesFrame;
+}));
