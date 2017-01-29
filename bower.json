@@ -4,6 +4,7 @@
     "jquery": "~2.1.1",
     "snapjs": "~1.9.3",
     "responsive-elements": "~1.0.0",
-    "gridforms": "~1.0.2"
+    "gridforms": "~1.0.2",
+    "prism": "gh-pages"
   }
 }
