@@ -24,6 +24,14 @@ I've built a few example layouts for you play around with. Check out the example
 2.  **Install** Dependencies using the "bower install" command. If you don't have the Bower Package Manager, install it using the instructions on their [official site](http://bower.io/).
 3.  **Example.html** has some boilerplate code that you can use to get started.
 
+### How do I use flakes with Meteor?
+
+Simply run
+
+    meteor add flakes:flakes
+
+And use it in your project.
+
 ### How do I contribute to Flakes?
 
 
